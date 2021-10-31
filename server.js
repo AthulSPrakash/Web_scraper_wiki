@@ -7,7 +7,7 @@ const port = process.env.PORT || 5000
 const url = "https://en.wikipedia.org/wiki/List_of_brightest_stars"
 const base = "https://en.wikipedia.org"
 
-const articles = []
+const stars = []
 
 axios(url)
 .then(res => {
@@ -27,13 +27,17 @@ axios(url)
         }
         const link = base + $(this).find('td:nth-child(3)').find('a').attr('href')
         if(rank==='' && name==='') return
-        articles.push({rank, name, visualMagnitude, distance, spectralClass, link})
+        stars.push({rank, name, visualMagnitude, distance, spectralClass, link})
     })
 })
 .catch(err => console.log(err))
 
+app.get("/", (req,res) => {
+    res.json('Welcome to Brightest Stars API, ⭐')
+})
+
 app.get("/brightstars", (req,res) => {
-    res.json(articles)
+    res.json(stars)
 })
 
 app.listen(port, () => console.log(`server listening on port ${port}`))
