@@ -1,0 +1,25 @@
+{
+  "name": "web-scraper-nasa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AthulSPrakash/web-scraper-nasa.git"
+  },
+  "author": "Athul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AthulSPrakash/web-scraper-nasa/issues"
+  },
+  "homepage": "https://github.com/AthulSPrakash/web-scraper-nasa#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "cheerio": "^1.0.0-rc.10",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.14"
+  }
+}
